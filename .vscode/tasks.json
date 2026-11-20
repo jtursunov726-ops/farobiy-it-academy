@@ -1,0 +1,26 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Farobiy: ishga tushirish",
+      "type": "shell",
+      "command": "npm.cmd install && npm.cmd run dev -- --open",
+      "options": {
+        "shell": { "executable": "cmd.exe", "args": ["/d", "/c"] }
+      },
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "vite",
+        "pattern": { "regexp": "^x^" },
+        "background": {
+          "activatesForPattern": ".",
+          "beginsPattern": "VITE",
+          "endsPattern": "Local:"
+        }
+      },
+      "group": { "kind": "build", "isDefault": true },
+      "runOptions": { "runOn": "folderOpen" },
+      "presentation": { "reveal": "always", "panel": "dedicated" }
+    }
+  ]
+}
